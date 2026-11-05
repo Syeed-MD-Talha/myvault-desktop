@@ -40,19 +40,26 @@ identifiers and a small header.
 
 ## Download
 
-Prebuilt Windows binaries are attached to the **Releases** page of this
-repository:
+Prebuilt Windows binaries are attached to the
+**[v1.0.0 release](https://github.com/Syeed-MD-Talha/myvault-desktop/releases/latest)**:
 
 | Artefact | Description |
 | --- | --- |
-| `MyVault_Setup.exe` | NSIS installer, installs for the current user (no admin rights) |
-| `MyVault.exe` | Portable executable, no installation required |
+| [`MyVault_Setup.exe`](https://github.com/Syeed-MD-Talha/myvault-desktop/releases/download/v1.0.0/MyVault_Setup.exe) | NSIS installer, installs for the current user (no admin rights) |
+| [`MyVault.exe`](https://github.com/Syeed-MD-Talha/myvault-desktop/releases/download/v1.0.0/MyVault.exe) | Portable executable, no installation required |
 
 Both are self-contained: they embed the compiled frontend and need neither
 Node.js nor Rust. Windows 11 ships the required WebView2 runtime; on Windows 10
 install the Evergreen WebView2 runtime first.
 
 The binaries are unsigned, so SmartScreen may show a warning on first launch.
+
+SHA-256:
+
+```
+E7366A0203A865B3469F7AD47BCC5AD6FFF19C73E09499DED19922CA080C8BE5  MyVault_Setup.exe
+9A50D04D7B3E59AD25D32DA91474FF775C4A40293EDBB84B30A56D5510404B01  MyVault.exe
+```
 
 ---
 
