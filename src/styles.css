@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 245 247 251;
+  --c-surface: 255 255 255;
+  --c-elevated: 255 255 255;
+  --c-ink: 17 24 39;
+  --c-muted: 100 116 139;
+  --c-line: 226 232 240;
+  --c-accent: 2 132 199;
+  --c-accent-strong: 3 105 161;
+  --c-danger: 190 18 60;
+  --c-success: 5 122 85;
+}
+
+[data-theme="dark"] {
+  --c-bg: 12 16 24;
+  --c-surface: 20 26 37;
+  --c-elevated: 28 36 50;
+  --c-ink: 232 238 247;
+  --c-muted: 148 163 184;
+  --c-line: 45 56 74;
+  --c-accent: 56 189 248;
+  --c-accent-strong: 125 211 252;
+  --c-danger: 251 113 133;
+  --c-success: 52 211 153;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-app text-ink antialiased;
+    font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--c-line)) transparent;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/60 ring-offset-1 ring-offset-app;
+  }
+
+  ::selection {
+    background: rgb(var(--c-accent) / 0.25);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-lg border border-line
+      bg-surface px-3.5 py-2 text-sm font-medium text-ink transition
+      hover:bg-elevated active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-accent text-white hover:bg-accent-strong dark:text-slate-900;
+  }
+
+  .btn-danger {
+    @apply border-transparent bg-danger text-white hover:opacity-90;
+  }
+
+  .btn-ghost {
+    @apply border-transparent bg-transparent hover:bg-elevated;
+  }
+
+  .btn-sm {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .card {
+    @apply rounded-xl2 border border-line bg-surface shadow-card;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink
+      placeholder:text-muted/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted;
+  }
+
+  .link {
+    @apply text-accent underline-offset-2 hover:underline;
+  }
+
+  .row-hover {
+    @apply transition-colors hover:bg-elevated;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full border border-line bg-elevated px-2 py-0.5 text-[11px] font-medium text-muted;
+  }
+
+  .table-head {
+    @apply sticky top-0 z-10 border-b border-line bg-surface/95 text-left text-[11px]
+      font-semibold uppercase tracking-wide text-muted backdrop-blur;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

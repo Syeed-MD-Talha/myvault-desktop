@@ -1,0 +1,24 @@
+[package]
+name = "myvault-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "MyVault encrypted container engine (no GUI dependencies)"
+
+[dependencies]
+argon2 = { version = "0.5", features = ["std"] }
+chacha20poly1305 = { version = "0.10", features = ["std"] }
+hkdf = "0.12"
+sha2 = "0.10"
+subtle = "2.5"
+rusqlite = { version = "0.31", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+zeroize = { version = "1.8", features = ["derive"] }
+secrecy = "0.10"
+thiserror = "1"
+
+[dev-dependencies]
+tempfile = "3"
+rusqlite = { version = "0.31", features = ["bundled"] }

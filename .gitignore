@@ -1,0 +1,24 @@
+# Rust / Tauri
+/target
+/src-tauri/gen
+*.pdb
+
+# Node
+/node_modules
+/dist
+npm-debug.log*
+
+# Local application data
+*.vault
+*.vault.lock
+
+# Build output copies
+/release
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+Thumbs.db
+.DS_Store
